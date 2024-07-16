@@ -1,4 +1,6 @@
 FROM alpine:3.13
 
+RUN apk add --update-cache dhclient iputils
+
 RUN rm -f /sbin/init
 COPY init /sbin/init
