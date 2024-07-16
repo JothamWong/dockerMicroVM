@@ -1,0 +1,7 @@
+FROM alpine:3.13 
+
+# import curl from current repository image
+COPY --from=ghcr.io/tarampampam/curl:8.6.0 /bin/curl /bin/curl
+
+RUN rm -f /sbin/init
+COPY init /sbin/init

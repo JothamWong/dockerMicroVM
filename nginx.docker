@@ -1,0 +1,6 @@
+FROM nginx:1.21.0
+
+RUN apt update
+RUN apt install -y isc-dhcp-client iputils-ping
+RUN rm -f /sbin/init
+COPY init /sbin/init
